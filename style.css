@@ -1,4 +1,4 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -9,6 +9,7 @@ body {
     margin: 0;
 }
 
+/* Container */
 .container {
     width: 90%;
     max-width: 900px;
@@ -16,6 +17,7 @@ body {
     padding: 20px;
 }
 
+/* Header */
 header {
     text-align: center;
     padding: 30px 0;
@@ -23,12 +25,14 @@ header {
 
 header h1 {
     color: #f43f5e;
+    font-size: 32px;
 }
 
 .subtitle {
     color: #94a3b8;
 }
 
+/* Sections */
 section {
     background: rgba(255, 255, 255, 0.05);
     margin: 20px 0;
@@ -41,6 +45,7 @@ section:hover {
     transform: scale(1.02);
 }
 
+/* Headings */
 h2 {
     color: #38bdf8;
 }
@@ -49,14 +54,21 @@ h3 {
     color: #facc15;
 }
 
+/* Lists */
 ul, ol {
     padding-left: 20px;
+}
+
+/* Table (responsive scroll) */
+.table-container {
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    min-width: 500px;
 }
 
 table, th, td {
@@ -72,27 +84,17 @@ th {
     background: #1e293b;
 }
 
+/* Footer */
 footer {
     text-align: center;
     margin-top: 30px;
     color: #94a3b8;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-
-    header h1 {
-        font-size: 22px;
-    }
-}
-
 /* Screenshots */
 .screenshots {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
 }
 
@@ -102,20 +104,72 @@ footer {
     border: 2px solid #444;
 }
 
-.screenshots p {
-    text-align: center;
-    margin-top: 5px;
-}
-
-/* Fade-in base (hidden initially) */
+/* Fade-in animation */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 1.2s ease;
+    transition: all 1s ease;
 }
 
-/* When visible */
 .fade-in.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* 🔥 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    p, li {
+        font-size: 14px;
+    }
+
+    /* Stack screenshots nicely */
+    .screenshots {
+        grid-template-columns: 1fr;
+    }
+
+    /* Disable zoom effect on mobile */
+    section:hover {
+        transform: none;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    p, li {
+        font-size: 13px;
+    }
 }
